@@ -78,7 +78,6 @@ namespace ConvertLSO
 
         public virtual void ParseTracks(List<int> tracksOffsets)
         { 
-            byte minimalChannel = 0;
 
             foreach (var track in tracksOffsets)
             {
@@ -87,12 +86,7 @@ namespace ConvertLSO
                 if (Track.IsMusicTrack(header))
                 {
                     var t = new Track(trackBytes);
-
-                    if (minimalChannel == 0)
-                        minimalChannel = t.Channel;
-
-                    t.Channel -= minimalChannel;
-
+                    
                     if (t.Channel > 0 && t.Channel <= 0x10)
                     {
                         t.InitialInstrument = ChannelsInstruments[t.Channel];
@@ -101,6 +95,11 @@ namespace ConvertLSO
                 }
             }
 
+            HandleNegativeTracks();
+        }
+
+        public void HandleNegativeTracks()
+        {
             // Handle negative offsets
             if (Tracks.Any(x => x.TrackPosition < 0))
             {

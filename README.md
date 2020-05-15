@@ -1,5 +1,5 @@
 # LSO2MIDI
-Convert MicroLogic/Logic files to MIDI files
+Converts MicroLogic/Logic files to MIDI files
 
 # Background
 I had hunderds of old .lso files from the 90's using MicroLogic 2.0.7 (by eMagic).

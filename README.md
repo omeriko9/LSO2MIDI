@@ -8,7 +8,7 @@ I wanted a quick & dirty solution for triaging between the different music files
 # What it does
 (tries to) Convert .lso files from MicroLogic 2.0.7 and Logic Platinum 4.7/5.x to MIDI files
 
-# Caviats 
+# Caveats 
 Code is hacky and buggy. If you find a bug or a runtime crash please send me the .lso so I can fix it (or better yet, fix it and create a pull request :D )
 
 # Overview
